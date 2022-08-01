@@ -133,3 +133,4 @@ dmypy.json
 
 # For this project
 *.txt
+*.csv
