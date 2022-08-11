@@ -3,8 +3,10 @@
 
 # 定义所需端口和其它变量
 export fe_port="8099"
-export port="30031"
-export named_port_list="port-30031:30031,port-30028:30028"
+# for go-mmproxy
+export port="8099"
+# export port="30031"
+export named_port_list="port-8099:8099,port-30031:30031,port-30028:30028"
 
 # export instance_name="fantasy-southamerica-gamesvr-01-master-1"
 export instance_name=$1
@@ -44,7 +46,10 @@ export ipv4_1_ip=$(gcloud compute addresses list --filter="name=${ipv4_1}" --for
 export ipv4_2_ip=$(gcloud compute addresses list --filter="name=${ipv4_2}" --format "get(ADDRESS)")
 
 backend_name="${instance_name}-${fe_port}-${port}"
-health_check_name="tcp-hc-${port}"
+
+# for go-mmproxy
+health_check_name="hc-tcp-port-8099-pp"
+# health_check_name="tcp-hc-${port}"
 port_name="port-${port}"
 target_proxy_name="${instance_name}-tp-${port}"
 # ipv4="ipv4-${instance_name}-${port}"
