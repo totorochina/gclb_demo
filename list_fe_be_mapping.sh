@@ -10,5 +10,5 @@ export health=$(gcloud compute backend-services get-health ${backend} --global -
 
 for fe_ip in ${fe_ip_list}
 do
-	echo "${backend},${fe_ip}:8099,${instance_name},${instance_public_ip}:30031,${health}"
+	echo "${backend},${fe_ip}:8099,${instance_name},${instance_public_ip}:8099,${health}"
 done
