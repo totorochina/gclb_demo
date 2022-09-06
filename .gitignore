@@ -134,3 +134,4 @@ dmypy.json
 # For this project
 *.txt
 *.csv
+vm_lb_mapping.ipynb
